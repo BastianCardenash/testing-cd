@@ -45,7 +45,7 @@ jobs:
     #   run: |
     #     python coolgoat/manage.py test api.tests.trivial_test
 
-    - name: Configure AWS Credentials
+    - name: Configure AWS Credentials je
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
