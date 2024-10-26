@@ -1,0 +1,84 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.swp
+*.swo
+
+# Virtual Environment
+venv/
+.env
+*.env
+
+# Django
+db.sqlite3
+/media/
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+staticfiles/
+node_modules/
+*.sqlite3
+
+# Environment variables file
+.env
+
+# macOS
+.DS_Store
+
+# Docker
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.log
+docker-compose.override.yml
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# VS Code
+.vscode/
+.idea/
+
+# pipenv
+Pipfile.lock
+
+# PyCharm
+.idea/
+*.iml
+
+# Pycharm Macros
+*.iws
+
+# Anaconda
+.env
+.conda/
+.condarc
+.conda-env/
+*.conda
+*.ipynb_checkpoints
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+*.ppk
