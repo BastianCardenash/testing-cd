@@ -63,24 +63,23 @@ jobs:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
         REGISTRY_ALIAS: t4y0j0c2
         REPOSITORY: coolgoat-api
-        IMAGE_TAG: latest
       run: |
         cd coolgoat
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-django .
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-django
         cd ..
         cd mqtt_subscriber
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber:$IMAGE_TAG .
-        docker push $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber:$IMAGE_TAG
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-subscriber .
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-subscriber
         cd ..
         cd mqtt_subscriber_history
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber_history:$IMAGE_TAG .
-        docker push $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber_history:$IMAGE_TAG
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-history .
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-history
         cd ..
         cd mqtt_subscriber_validations
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber_validations:$IMAGE_TAG .
-        docker push $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber_validations:$IMAGE_TAG
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-validations .
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
         cd ..
         cd mqtt_subscriber_requests_listen
-        docker build -t $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber_requests:$IMAGE_TAG .
-        docker push $REGISTRY/$REGISTRY_ALIAS/mqtt_subscriber_requests:$IMAGE_TAG
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-requests .
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-requests
