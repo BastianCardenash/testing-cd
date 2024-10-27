@@ -78,7 +78,7 @@ jobs:
         cd ..
         cd mqtt_subscriber_validations
         docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-validations .
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-validations
         cd ..
         cd mqtt_subscriber_requests_listen
         docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest-mqtt-requests .
