@@ -29,21 +29,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r coolgoat/requirements.txt
 
-    # - name: Run Tests
-    #   env:
-    #     DJANGO_DEBUG: True
-    #     DJANGO_ALLOWED_HOSTS: localhost,django,127.0.0.1
-    #     DJANGO_SECRET_KEY: fo9bsl$h+@mjmktbd6&thas8g2vo2l7ony(-e!v9^^u6yx%tb+
-    #     MQTT_HOST: broker.iic2173.org
-    #     MQTT_PORT: 9000
-    #     MQTT_USERNAME: students
-    #     MQTT_PASSWORD: iic2173-2024-2-students
-    #     MQTT_TOPIC_INFO: fixtures/info
-    #     MQTT_TOPIC_VALIDATIONS: fixtures/validation
-    #     MQTT_TOPIC_REQUESTS: fixtures/request
-    #     MQTT_TOPIC_HISTORY: fixtures/history
-    #   run: |
-    #     python coolgoat/manage.py test api.tests.trivial_test
+    - name: Run Tests
+      env:
+        DJANGO_DEBUG: True
+        DJANGO_ALLOWED_HOSTS: localhost,django,127.0.0.1
+        DJANGO_SECRET_KEY: fo9bsl$h+@mjmktbd6&thas8g2vo2l7ony(-e!v9^^u6yx%tb+
+        MQTT_HOST: broker.iic2173.org
+        MQTT_PORT: 9000
+        MQTT_USERNAME: students
+        MQTT_PASSWORD: iic2173-2024-2-students
+        MQTT_TOPIC_INFO: fixtures/info
+        MQTT_TOPIC_VALIDATIONS: fixtures/validation
+        MQTT_TOPIC_REQUESTS: fixtures/request
+        MQTT_TOPIC_HISTORY: fixtures/history
+      run: |
+        python coolgoat/manage.py test api.tests.trivial_test
 
     - name: Configure AWS Credentials je
       uses: aws-actions/configure-aws-credentials@v4
